@@ -1,5 +1,5 @@
-#ifndef BASE64_H
-#define BASE64_H
+#ifndef BASE64_UTIL_H
+#define BASE64_UTIL_H
 
 #define WHITESPACE 64
 #define EQUALS     65

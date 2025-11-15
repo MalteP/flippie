@@ -1,6 +1,6 @@
 #ifndef DOTS_HANDLER_H
 #define DOTS_HANDLER_H
-#include "../base64.h"
+#include "../base64_util.h"
 #include "../flippie.h"
 #include "abstract_handler.h"
 #include <ESP8266WebServer.h>

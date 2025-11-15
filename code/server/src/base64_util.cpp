@@ -1,4 +1,4 @@
-#include "base64.h"
+#include "base64_util.h"
 
 const char* Base64::base64chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 const unsigned char Base64::d[256] = {
