@@ -4,7 +4,7 @@ NotFoundHandler::NotFoundHandler(Flippie* f) {
    flippie = f;
 }
 
-bool NotFoundHandler::handle(ESP8266WebServer& server, HTTPMethod method, String uri) {
+bool NotFoundHandler::handle(ESP8266WebServer& server, HTTPMethod method, const String& uri) {
    if(flippie->config->verbose)
       Serial.printf("Handle '%s'(%s) in NotFoundHandler.\n", uri.c_str(), method == HTTP_GET ? "GET" : (method == HTTP_POST ? "POST" : "UNKOWN"));
 
@@ -12,6 +12,6 @@ bool NotFoundHandler::handle(ESP8266WebServer& server, HTTPMethod method, String
    return true;
 }
 
-bool NotFoundHandler::canHandle(HTTPMethod method, String uri) {
+bool NotFoundHandler::canHandle(HTTPMethod method, const String& uri) {
    return true;
 }

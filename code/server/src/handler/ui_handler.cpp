@@ -35,7 +35,7 @@ UIHandler::UIHandler(Flippie *f) {
 }
 
 bool UIHandler::handle(ESP8266WebServer &server, HTTPMethod method,
-   String uri) {
+   const String& uri) {
       if (!canHandle(method, uri)) {
          return false;
       }
@@ -64,7 +64,7 @@ bool UIHandler::handle(ESP8266WebServer &server, HTTPMethod method,
       }
       return false;
    }
-   bool UIHandler::canHandle(HTTPMethod method, String uri) {
+   bool UIHandler::canHandle(HTTPMethod method, const String& uri) {
       if (method == HTTP_GET &&
          (uri == "/" || strncmp("/ui", uri.c_str(), 3) == 0)) {
             return true;

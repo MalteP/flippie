@@ -6,8 +6,8 @@
 class NotFoundHandler : public RequestHandler {
   public:
     NotFoundHandler(Flippie* f);
-    bool canHandle(HTTPMethod method, String uri) override;
-    bool handle(ESP8266WebServer& server, HTTPMethod method, String uri) override;
+    bool canHandle(HTTPMethod method, const String& uri) override;
+    bool handle(ESP8266WebServer& server, HTTPMethod method, const String& uri) override;
   protected:
     Flippie* flippie;
 };

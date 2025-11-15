@@ -8,8 +8,8 @@
 class DotsHandler : public AbstractHandler {
 public:
   DotsHandler(Flippie* flippie);
-  bool canHandle(HTTPMethod method, String uri) override;
-  bool handle(ESP8266WebServer& server, HTTPMethod method, String uri) override;
+  bool canHandle(HTTPMethod method, const String& uri) override;
+  bool handle(ESP8266WebServer& server, HTTPMethod method, const String& uri) override;
 protected:
   Flippie* flippie;
   Base64 b64;

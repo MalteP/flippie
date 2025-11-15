@@ -3,7 +3,7 @@
 FlippieHandler::FlippieHandler(Flippie *f) { flippie = f; }
 
 bool FlippieHandler::handle(ESP8266WebServer &server, HTTPMethod method,
-                            String uri) {
+                            const String& uri) {
   if (!canHandle(method, uri)) {
     return false;
   }
@@ -130,7 +130,7 @@ bool FlippieHandler::handle(ESP8266WebServer &server, HTTPMethod method,
   return true;
 }
 
-bool FlippieHandler::canHandle(HTTPMethod method, String uri) {
+bool FlippieHandler::canHandle(HTTPMethod method, const String& uri) {
   if (uri == "/flippie" && (method == HTTP_GET || method == HTTP_POST)) {
     return true;
   }

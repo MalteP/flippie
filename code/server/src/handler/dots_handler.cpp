@@ -2,7 +2,7 @@
 
 DotsHandler::DotsHandler(Flippie *f) { flippie = f; }
 
-bool DotsHandler::handle(ESP8266WebServer &server, HTTPMethod method, String uri) {
+bool DotsHandler::handle(ESP8266WebServer &server, HTTPMethod method, const String& uri) {
    if (!canHandle(method, uri)) {
       return false;
    }
@@ -80,7 +80,7 @@ bool DotsHandler::handle(ESP8266WebServer &server, HTTPMethod method, String uri
    return true;
 }
 
-bool DotsHandler::canHandle(HTTPMethod method, String uri) {
+bool DotsHandler::canHandle(HTTPMethod method, const String& uri) {
    if (uri == "/dots" && (method == HTTP_GET || method == HTTP_POST)) {
       return true;
    }

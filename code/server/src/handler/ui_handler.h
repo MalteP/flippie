@@ -6,8 +6,8 @@
 class UIHandler : public RequestHandler {
   public:
     UIHandler(Flippie* f);
-    bool canHandle(HTTPMethod method, String uri) override;
-    bool handle(ESP8266WebServer& server, HTTPMethod method, String uri) override;
+    bool canHandle(HTTPMethod method, const String& uri) override;
+    bool handle(ESP8266WebServer& server, HTTPMethod method, const String& uri) override;
   protected:
     static const char index_page[];
     static const char low_level_page[];
